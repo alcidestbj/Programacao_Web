@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Exemplo switch</title>    
+</head>
+<body>
+</body>
+<script>
+    //testar com valores
+    //a=1, b=-10, c=24, resposta raiz1 = 4 e raiz2 = 6
+    //a=1, b=-2, c=-3, resposta raiz1=3 e raiz2 = -1
+    //a=1, b=8, c=16, resposta raiz1/raiz2 = -4
+    
+    var a, b, c;
+    a = parseInt(prompt("Digite o valor de A"));    
+    b = parseInt(prompt("Digite o valor de B"));
+    c = parseInt(prompt("Digite o valor de C"));
+	
+	var delta, str="";
+    var raiz1, raiz2;
+    delta = (b*b)-4*a*c;
+    raiz1 = (-b + Math.sqrt(delta)) / (2*a);
+    raiz2 = (-b - Math.sqrt(delta)) / (2*a);
+    str += "A raiz 1 é = " + raiz1 + "<br/>";
+    str += "A raiz 2 é = " + raiz2;
+    		
+    document.write("A=" + a + " - B=" + b + " - C=" + c 
+                   + ", resultado :<br> " + str);
+</script>
+</html>
