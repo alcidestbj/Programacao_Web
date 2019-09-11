@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Função e procedimento</title>
+
+<script type="text/javascript">
+    function multiplicaA(a,b)
+    {
+      alert("Multiplicação no procedimento = " + (a*b) );
+    }
+    
+    function multiplicaB(a,b)
+    {
+        var result;
+        result = (a*b);
+        return(result);
+        //ou simplesmente:  return(a*b);
+    }
+</script>
+
+</head>
+
+<body>
+
+	<h2>Função e procedimento</h2>
+	<p>Foi uma demonstração para comparar função com procedimento</p>
+
+	<script language="javascript">
+		var n1,n2,a,b;
+
+		n1 = prompt("Digite o valor 1:");
+		n2 = prompt("Digite o valor 2:");
+
+		a = parseFloat(n1);
+		b = parseFloat(n2);
+
+		multiplicaA(a,b); ///chamamos ao procedimento
+
+		var res = multiplicaB(a,b); //chamamos a função
+		alert("Multiplicação com a função: " + res);
+
+	</script>
+
+</body>
+</html>

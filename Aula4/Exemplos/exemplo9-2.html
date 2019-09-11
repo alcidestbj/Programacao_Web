@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Exemplo com funções</title>
+	<script type="text/javascript">
+		function media(a,b) {
+			var res;
+            res = (a+b)/2;
+            return res;
+		}
+		function media_de_tres(a,b,c) {
+			var res;
+            res = (a+b+c)/3;
+            return res;
+		}
+	</script>
+</head>
+
+<body>
+	<h2>Exemplo com funções</h2>	
+	<script type="text/javascript">
+		document.write("A primeira média vale " + media(6,8) + "<br>");
+		document.write("A segunda média vale " + media(5.0,4.0) + "<br>");    
+		document.write("A terceira média vale " + media(6, 4) + "<br>"); 
+        
+		document.write("A média dos três valores é " 
+                       + media_de_tres(6, 4, 5) + "<br>");    
+	</script>
+</body>
+</html>
