@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo 3</title>
+    <meta charset="UTF-8">
+    <style>
+        section {
+            color: red;
+            font-size: 16pt;
+        }
+        
+        article {
+            border: 2px solid red;
+            width: 300px;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#btn").click(function() {
+                $("#ex1").html("<strong>Função html do JQuery</strong>");
+            });
+            $("#btn2").click(function() {
+                $("#ex1").text("<br>Função text, sem elemento html");
+            });
+            $("#btn3").click(function() {
+                $("#ex1").append("<br>Função append do JQuery");
+            });
+            $("#btn4").click(function() {
+                $("#ex1").prepend("Função prepend do JQuery<br>");
+            });
+            $("#btn5").click(function() {
+                $("#ex1").empty();
+            });
+            $("#btn6").click(function() {
+                $("#ex1").remove();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Exemplo 3 - JS </h1>
+    </header>
+    <section>
+        <article id="ex1">Segundo Exemplo</article>
+        <button type="button" id="btn">Função html</button>
+        <button type="button" id="btn2">Função text</button>
+        <button type="button" id="btn3">Função append</button>
+        <button type="button" id="btn4">Função prepend</button>
+        <br>
+        <button type="button" id="btn5">Limpar</button>
+        <button type="button" id="btn6">Remover</button>
+
+    </section>
+</body>
+
+</html>

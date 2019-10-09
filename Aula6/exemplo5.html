@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Untitled Document</title>
+<script>
+function alteraTitulo(){
+	document.getElementById("tit").innerHTML = document.getElementById("titulo").value;
+	document.getElementById("tit").style.color="blue";
+	document.getElementById("tit").style.fontSize="50pt";	
+}
+
+
+function criaTabela(){
+	linhas = document.getElementById("linha").value
+	colunas = document.getElementById("coluna").value
+	conteudo="";
+	conteudo += "<table border='1'>";
+	for (i=1;i<=linhas;i++){
+		conteudo += "<tr>";
+		for (j=1; j<=colunas;j++){
+			conteudo += "<td>Linha: "+i+" - Coluna:" + j +"</td>";
+		}			
+		conteudo += "</tr>";
+	}	
+	conteudo += "</table>";
+	document.getElementById("tab").innerHTML=conteudo;
+}
+
+window.onload=function(){
+	var obj1= document.getElementById("button");
+	var obj2= document.getElementById("button2");
+	obj1.onclick = alteraTitulo;
+	obj2.onclick =  criaTabela;
+}
+</script>
+</head>
+
+<body>
+<div id="tit">DHTML</div>
+<form id="form1" name="form1" method="post" action="">
+  <p>T&iacute;tulo:
+    <input type="text" name="titulo" id="titulo" /> 
+    <input type="button" name="button" id="button" value="Alterar título"   />
+  </p>
+  <p>Cria tabela:<br />
+    Linhas: 
+      <input name="linha" type="text" id="linha" size="10" /> 
+      Colunas: 
+      <input name="coluna" type="text" id="coluna" size="10" />
+      <input type="button" name="button2" id="button2" value="Criar tabela"  />
+  </p>
+</form>
+<div id="tab"></div>
+</body>
+</html>

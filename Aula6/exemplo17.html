@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo 2</title>
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#btn1").click(function() {
+                $("p").hide();
+            });
+            $("#btn2").click(function() {
+                $("p").show();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Cabeçalho</h2>
+    <p>Parágrafo 1</p>
+    <p>Parágrafo 2</p>
+    <button id="btn1">Clique aqui para ocultar as tags P</button>
+    <button id="btn2">Clique aqui para mostrar as tags P</button>
+</body>
+
+</html>

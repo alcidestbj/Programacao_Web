@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Exemplo 4</title>
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $("#btn1").click(function(){          
+        $("#texto").css("color","red");
+        $("#texto").css("width","200px");	
+      });
+      $("#opc1").click(function(){
+        $("#texto").slideToggle("slow");
+      });
+    });
+    </script>
+    
+    <style type="text/css"> 
+    #conteudo,#opc1{
+        padding:5px;
+        text-align:center;
+        background-color:#e5eecc;
+        border:solid 1px #c3c3c3;
+        width:350px;
+    }
+    #texto{
+        width:320px;
+        background-color:#e5eeff;
+        padding:20px;
+        display:none;
+    }
+    </style>
+    
+</head>
+<body>
+    <div id="opc1">Clique aqui para mostrar/ocultar o conteúdo</div>
+    <div id="texto">
+    jQuery is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. jQuery is designed to change the way that you write JavaScript.
+    </div>
+    <button id="btn1">Alterar cor da fonte e largura da div</button>
+</body>
+</html>

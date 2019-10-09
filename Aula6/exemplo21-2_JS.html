@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exemplo6-2-JS - Somar dois valores - com JavaScript</title>
+    <meta charset="UTF-8">
+    <script src="js/jquery.min.js"></script>
+    <link href="css/formata.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript">       
+        window.onload = function() {
+            var btn = document.getElementById("somar");
+            btn.onclick = somaValores;
+        }
+
+        function somaValores() {
+            var n1, n2;
+            n1 = parseFloat(document.getElementById("valor1").value);
+            n2 = parseFloat(document.getElementById("valor2").value);
+            document.getElementById("resul").innerHTML = "<b>Soma: </b>" + (n1 + n2);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Somar dois valores - agora com JavaScript</h1>
+    </header>
+    <form action="" method="post" class="fundo">
+        Valor 1:
+        <input type="text" id="valor1">
+        <br>Valor 2:
+        <input type="text" id="valor2">
+        <button id="somar" type="button">Calcular</button>
+        <br>
+        <br>
+        <div id="resul"><strong>Resultado: </strong></div>
+    </form>
+
+</body>
+
+</html>

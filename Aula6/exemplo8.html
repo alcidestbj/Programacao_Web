@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Eventos de teclado</title>
+<script>
+	window.onload=function(){
+		elemento = document.body; //eventos de teclado atendidos para o corpo do documento
+		elemento.onkeydown =  trataEvento1;
+		elemento.onkeyup = trataEvento1;	
+		elemento.onkeypress = trataEvento2;	
+	}
+
+	function trataEvento1(event)
+	{
+		document.getElementById("box1").innerHTML = "keyCode<br>"+event.keyCode;	
+	}
+
+	function trataEvento2(event)
+	{
+		document.getElementById("box2").innerHTML = "charCode<br>"+event.charCode;
+	}
+</script>
+<style>
+	.caixa{
+		width:300px;
+		height:300px;
+		font-size:30pt;
+		border:5px solid #000;	
+		float:left;
+		text-align:center;
+	}
+</style>
+</head>
+
+<body>
+
+<div class="caixa" id="box1"></div>
+<div class="caixa" id="box2"></div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+<script>
+function qtdCaracter(){
+	var texto = document.getElementById("caixa").value; 
+	alert (texto.length);
+}
+
+function maiusculo(){
+	document.getElementById("caixa").value = document.getElementById("caixa").value.toUpperCase(); 
+}
+
+function minusculo(){
+	document.getElementById("caixa").value = document.getElementById("caixa").value.toLowerCase(); 
+}
+
+function parteTexto(){
+	var texto =  document.getElementById("caixa").value;
+	alert(texto.substring(9,17)); 
+    //string.substring(início[,fim]) posição fim não inclusa
+}
+
+window.onload=function(){
+	var obj1 = document.getElementById("button");
+	var obj2 = document.getElementById("button2");
+	var obj3 = document.getElementById("button3");
+	var obj4 = document.getElementById("button4");
+	
+	obj1.onclick=qtdCaracter;
+	obj2.onclick=maiusculo;
+	obj3.onclick=minusculo;
+	obj4.onclick=parteTexto;
+}
+</script>
+    
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <p>
+    <textarea name="caixa" id="caixa" cols="45" rows="5">Entra em operação hoje o Débito Direto Autorizado (DDA), o novo serviço de cobrança eletrônica de boletos bancários, que promete dar mais segurança nas operações entre bancos e reduzir o consumo de papel. Pessoas físicas e empresas passarão a ver os boletos de contas a pagar pela internet e caixas eletrônicos dos bancos. O pagamento pode ser feito automaticamente por esses canais, mas não é obrigatório.</textarea>
+    <br />  
+    <input type="button" name="button"  id="button" value="QTD caracteres" />  
+    <input type="button" name="button2" id="button2" value="Mai&uacute;sculo" />  
+    <input type="button" name="button3" id="button3" value="Min&uacute;sculo"  /> 
+    <input type="button" name="button4" id="button4" value="Substring" />
+  </p>
+  </form>
+</body>
+</html>

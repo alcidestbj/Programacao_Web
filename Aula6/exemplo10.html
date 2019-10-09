@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exemplo 2</title>
+    <script language="javascript">
+        function validaCampos() {
+            //campo de texto nome
+            //podemos criar uma variável para guardar o valor de um campo
+            var nome = document.getElementById("nome").value;
+            if (nome == "" || nome.length < 5) {
+                alert("Preencha corretamente seu nome");
+                document.getElementById("nome").focus();
+                return false;
+            }
+            //campo sexo com getElementById
+            //neste exemplo iremos trabalhar no if diretamente sem criar variável
+            //mas também poderíamos fazer igual ao anterior
+            if (document.getElementById("sexo1").checked == false && document.getElementById("sexo2").checked == false) {
+                alert("Escolha seu sexo");
+                return false;
+            }
+            //campo cidade
+            if (document.getElementById("cidade").value == "") {
+                alert("Escolha a cidade onde mora.");
+                document.getElementById("cidade").focus();
+                return false;
+            }
+            //lista de filmes, o usuário pode marcar vários
+            //iremos validar se ele marcou pelo menos 1
+            var i;
+            for (i = 1; i <= 4; i++) {
+                if (document.getElementById("filmes" + i).checked == true) {
+                    break;
+                }
+                if (i == 4) {
+                    alert("Escolha pelo menos um filme");
+                    return false;
+                }
+            }
+            //campo mini-curriculo
+            if (document.getElementById("mini_curriculo").value == "") {
+                alert("Insira um resumo do seu currículo");
+                document.getElementById("mini_curriculo").focus();
+                return false;
+            }
+            return true;
+        }
+
+        function mostraFilmes_ID() {
+            var conteudo = "";
+            var i;
+            for (i = 1; i <= 4; i++) {
+                if (document.getElementById("filmes" + i).checked == true) {
+                    conteudo = conteudo + document.getElementById("filmes" + i).value + "\n";
+                }
+            }
+            alert(conteudo);
+        }
+
+        function mostraFilmes_NAME() {
+            var conteudo = "";
+            var i;
+            for (i = 0; i <= 3; i++) {
+                if (document.getElementsByName("filmes")[i].checked == true) {
+                    conteudo = conteudo + document.getElementsByName("filmes")[i].value + "\n";
+                }
+            }
+            alert(conteudo);
+
+            /*
+            //ou também:
+            conteudo = "";
+            var items = new Array();
+            items = document.getElementsByName("filmes");
+            for (i=0; i<items.length; i++)
+            {
+              if(items[i].checked) {
+                  conteudo += items[i].value + "\n";
+              }
+            }
+            alert(conteudo);
+            */
+
+        }
+
+        window.onload = function() {
+            //ao clicar no botão (input de tipo submit), validamos os dados:
+            document.getElementById("form1").onsubmit = validaCampos;
+            /*
+                //indicar o método que fará a validação também pode ser feito assim:
+                document.getElementById("form1").onsubmit = function (){
+                    return validaCampos();
+                }
+            */
+            //button2 função mostraFilmes_ID()
+            document.getElementById("button2").onclick = mostraFilmes_ID;
+            //button3 função mostraFilmes_NAME()
+            document.getElementById("button3").onclick = mostraFilmes_NAME;
+        }
+
+    </script>
+</head>
+
+<body>
+    <form name="form1" id="form1" method="post" action="">
+        <p>Nome:
+            <input name="nome" type="text" id="nome" size="60" />
+            <br/> <br/> Sexo:
+            <input type="radio" name="sexo" id="sexo1" value="radio" />M
+            <input type="radio" name="sexo" id="sexo2" value="radio2" />F
+            <br/> <br/> Cidade:
+            <select name="cidade" id="cidade">
+              <option value=""></option>
+              <option value="SP">S&atilde;o Paulo</option>
+              <option value="RJ">Rio de Janeiro</option>
+            </select>
+            <br/> <br/> Filmes favoritos:<br/>
+            <input name="filmes" type="checkbox" id="filmes1" value="Terror" /> Terror
+            <br/>
+            <input name="filmes" type="checkbox" id="filmes2" value="A&ccedil;&atilde;o" /> A&ccedil;&atilde;o
+            <br/>
+            <input name="filmes" type="checkbox" id="filmes3" value="Drama" /> Drama
+            <br/>
+            <input name="filmes" type="checkbox" id="filmes4" value="Com&eacute;dia" /> Com&eacute;dia
+            <br/><br/> Mini-curr&iacute;culo:
+            <br/>
+            <textarea name="mini_curriculo" id="mini_curriculo" cols="50" rows="5"></textarea>
+            <br/> <br/>
+            <input type="button" name="button2" id="button2" value="Mostrar filmes selecionados (getElementById)" />
+            <br/>
+            <input type="button" name="button3" id="button3" value="Mostrar filmes selecionados (getElementsByName)" />
+            <br/> <br/>
+            <input type="submit" name="button" id="button" value="Gravar" />
+        </p>
+    </form>
+</body>
+
+</html>
