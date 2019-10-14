@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exemplo Menu</title>
+<meta charset="utf-8">
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+	$.ajax({
+    	  	url : "menu.xml",
+        	success : function(xml){
+    			$(xml).find("opcao").each(function() {
+                    $("#menu").append(
+										$(this).attr("id") + "-" +
+										$(this).text() + "<br>"
+									  );
+                });
+           	},
+			error: function(){ 
+				alert("Mensagem de erro.");
+			}
+ 	});
+});
+</script>
+</head>
+<body>
+<div id="menu"></div>
+</body>
+</html>

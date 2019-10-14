@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<script> 
+$(function(){
+  $("#button1").click(gravarDados);
+  $("#button2").click(carregarDados);
+  $("#button3").click(function(){
+    apagarDados();
+  });
+});
+
+function gravarDados(){
+	sessionStorage.setItem("rgm",$("#rgm").val());
+	sessionStorage.setItem("nome",$("#nome").val());
+	sessionStorage.setItem("profissao",$("#profissao").val());
+	sessionStorage.setItem("cpf",$("#cpf").val());
+	alert("Dados gravados");
+	limparCampos();
+}
+
+function carregarDados(){	
+	if (sessionStorage.length > 0)
+	{
+		$("#rgm").val(sessionStorage.getItem("rgm"));
+		$("#profissao").val(sessionStorage.getItem("profissao"));
+		$("#nome").val(sessionStorage.getItem("nome"));
+		$("#cpf").val(sessionStorage.getItem("cpf"));
+	}
+	else
+	{
+		alert("Nenhum registro encontrado");
+	}
+}
+
+function apagarDados(){
+	if (sessionStorage.length > 0)
+	{
+		sessionStorage.clear();	
+	}
+	else
+	{
+		alert("Nenhum registro encontrado");
+	}
+	limparCampos();
+}
+
+function limparCampos(){
+	$("#rgm").val("");
+	$("#profissao").val("");
+	$("#nome").val("");
+	$("#cpf").val("");
+}
+</script>
+ 
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <p>RGM: 
+    <input name="rgm" type="text" id="rgm" size="10" />
+  </p>
+  <p>Nome:
+    <input name="nome" type="text" id="nome" size="60" />
+  </p>
+  <p>Profiss&atilde;o:
+    <input name="profissao" type="text" id="profissao" size="40" />
+  </p>
+  <p>CPF:
+    <input name="cpf" type="text" id="cpf" size="20" />
+  </p>
+  <p>
+    <input type="button" name="button"  id="button1" value="Gravar"  />
+    <input type="button" name="button2" id="button2" value="Carregar "  />
+    <input type="button" name="button3" id="button3" value="Apagar"  />
+  </p>
+</form>
+
+</body>
+</html>
