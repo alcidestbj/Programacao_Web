@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exemplo 1 JSON</title>
+    <meta charset="UTF-8">
+    <script src="js/jquery.min.js"></script>
+    <script>
+        var base;
+        if (localStorage.getItem("base")!== null){
+            base = JSON.parse(localStorage.getItem("base"));
+        }else{
+            base = {
+                dados:[]
+            };
+        }
+        
+        $(function() {
+           $("#btn1").click(cadastrarDados);
+           $("#btn2").click(listarDados);
+        });
+        
+        function cadastrarDados(){
+            base.dados.push({nome:$("#nome").val(),
+                             email:$("#email").val()});
+            localStorage.setItem('base', JSON.stringify(base));
+        }
+        
+        function listarDados(){
+            base = JSON.parse(localStorage.getItem("base"));
+            for(var i = 0; i < base.dados.length; i++)
+            {
+  	             console.log(base.dados[i].nome);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        Nome: <input type="text" id="nome"><br>
+        E-mail:<input type="text" id="email"><br>
+       <input type="button" value="Cadastrar" id="btn1">
+       <input type="button" value="Listar" id="btn2">    
+    </form>
+</body>
+
+</html>

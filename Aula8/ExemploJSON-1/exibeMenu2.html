@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exemplo Menu</title>
+<meta charset="utf-8">
+<script src="jquery.min.js"></script>
+<script>
+var opcoes = [         
+            {"id": 1, "nome": "Empresa"},
+            {"id": 2, "nome": "Produtos"},
+            {"id": 3, "nome": "Contato"},
+            {"id": 4, "nome": "Localização"},
+			{"id": 5, "nome": "Chat"}
+        ]
+</script>
+<script>
+$(function(){	       
+    x = opcoes.length;			
+	for (i=0; i<x; i++)
+	{
+		$("#menu").append(opcoes[i].id + "-" + opcoes[i].nome + "<br>");	
+	}          
+});
+</script>
+</head>
+<body>
+<div id="menu"></div>
+
+</body>
+</html>

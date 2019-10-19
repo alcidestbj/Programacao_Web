@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exemplo Menu</title>
+<meta charset="utf-8">
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+	   $.getJSON("dados.json", function(data){          
+           	x = data.opcoes.length;
+			for (i=0; i<x; i++)
+			{
+				$("#menu").append(data.opcoes[i].id + "-" + data.opcoes[i].nome + "<br>");	
+			}
+        });   
+});
+</script>
+</head>
+<body>
+<div id="menu"></div>
+
+</body>
+</html>

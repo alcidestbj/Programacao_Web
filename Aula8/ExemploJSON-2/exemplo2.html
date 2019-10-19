@@ -1,0 +1,43 @@
+<html>
+<head>
+    <title>Exemplo 2 JSON</title>
+    <meta charset="UTF-8">
+    <style>
+        #resumo{
+            font-family: "Tahoma";
+            line-height: 20pt;
+        }
+    
+    </style>
+    <script src="json/jquery.min.js"></script>
+    <script src="json/dados.js"></script>
+    <script>
+        function mostrarDados(){            
+             for (i = 0; i < prog.length; i++){
+            $("#resumo").append("Número: "+prog[i].numero
+                +"<br>Nome: "+prog[i].nome
+                +"<br>Tipo: "+prog[i].tipo);
+                 for(j=0; j< prog[i].noticia.length;j++){ 
+                     $("#resumo").append("<br><strong>Noticia "+(j+1)+"</strong>");
+                     $("#resumo").append("<br> - Data: "+prog[i].noticia[j].dataPublicacao
+                     +"<br> - Titulo: "+prog[i].noticia[j].titulo
+                     +"<br> - Link: <a href="+prog[i].noticia[j].link+">Veja mais</a>"
+                     );
+                 }
+                 $("#resumo").append("<hr>");
+        }
+            
+        }
+    $(function(){
+      $("#btn").click(mostrarDados)   
+       
+      }); 
+    
+
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="Mostrar dados"/>
+    <div id="resumo"></div>
+</body>
+</html>
