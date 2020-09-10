@@ -8,11 +8,11 @@
 
 <body>
     <script>
-        var salario_atual, novo_salario;
+        let salario_atual, novo_salario;
         salario_atual = parseFloat(prompt("Digite o salário do funcionário"));
         novo_salario = salario_atual + (salario_atual * 25/100);
-        document.write("O salário atual é R$ " + salario_atual + "<br/>");
-	    document.write("O salário com o aumento de 25% é R$ " + novo_salario);
+        console.log("O salário atual é R$ " + salario_atual);
+	    console.log("O salário com o aumento de 25% é R$ " + novo_salario);
     </script>
 
 </body>

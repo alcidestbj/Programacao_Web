@@ -13,20 +13,19 @@
     //a=1, b=-2, c=-3, resposta raiz1=3 e raiz2 = -1
     //a=1, b=8, c=16, resposta raiz1/raiz2 = -4
     
-    var a, b, c;
+    let a, b, c;
     a = parseInt(prompt("Digite o valor de A"));    
     b = parseInt(prompt("Digite o valor de B"));
     c = parseInt(prompt("Digite o valor de C"));
 	
-	var delta, str="";
-    var raiz1, raiz2;
+	let delta, str="";
+    let raiz1, raiz2;
     delta = (b*b)-4*a*c;
     raiz1 = (-b + Math.sqrt(delta)) / (2*a);
     raiz2 = (-b - Math.sqrt(delta)) / (2*a);
-    str += "A raiz 1 é = " + raiz1 + "<br/>";
-    str += "A raiz 2 é = " + raiz2;
+    str += " raiz 1 é = " + raiz1;
+    str += " raiz 2 é = " + raiz2;
     		
-    document.write("A=" + a + " - B=" + b + " - C=" + c 
-                   + ", resultado :<br> " + str);
+    console.log(`A= ${a} - B= ${b} - C= ${c}, resultado : ${str}`);
 </script>
 </html>
