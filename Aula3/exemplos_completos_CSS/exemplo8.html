@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hierarquia de estilos</title>                
+    
+  <style type="text/css">
+    body{
+        background-color:#ebebeb;	
+    }
+    p {
+      color:black;     
+    }
+    div > p { 
+        color:red; 
+    }
+	div span { 
+        color:blue; 
+    }
+  </style>
+    
+</head>
+<body>
+    <h3>Estilos hierárquicos</h3>   
+
+    <div>
+        <p>Parágrafo que é filho direto da div alterado com o estilo hierárquico div > p </p>
+        <span><p>Parágrafo que não é filho direto da div não é alterado com o estilo div > p</p></span>        
+    </div>
+
+    <div>
+        <span>Span que é filho direto da div alterado com o estilo hierárquico div span</span>
+        <p><span>Span que não é filho direto da div alterado com o estilo hierárquico div span</span></p>
+    </div>    
+</body>
+</html>
