@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exemplo 15 - formulário</title>
+	<script>
+		function mostraDados(){
+			let msg = "";
+			msg += "Login: " + document.getElementById("login").value+" | ";
+			msg += "Senha: " + document.getElementById("senha").value;
+			alert(msg);
+			document.write(msg);
+		}
+
+		window.onload = function(){
+			document.getElementById("btn").onclick = function(){
+				mostraDados();
+			}
+		}
+
+		
+	</script>
+</head>
+
+<body>
+	<h2>Exemplo 15 - formulário</h2>
+	<form name="form1" id="form1" method="post" action="" >
+	  Login:
+	  <input name="login" type="text" id="login" size="15">
+	  <br>
+	  Senha:
+	  <input name="senha" type="password" id="senha" size="10">
+	  <br>
+	  <input type="button" name="button" id="btn" value="OK">
+	</form>
+</body>
+</html>
