@@ -1,0 +1,11 @@
+section {
+    color: red;
+    font-size: 16pt;
+}
+
+article {
+    border: 2px solid red;
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+}
