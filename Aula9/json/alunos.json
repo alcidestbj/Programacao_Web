@@ -1,0 +1,22 @@
+{
+        "alunos": [
+                {
+                        "rgm": 12333,
+                        "nome": "André Lopes",
+                        "sexo": "M",
+                        "idade": 34
+                },
+                {
+                        "rgm": 12344,
+                        "nome": "Ana Silva",
+                        "sexo": "F",
+                        "idade": 25
+                },
+                {
+                        "rgm": 12355,
+                        "nome": "Luiz Souza",
+                        "sexo": "M",
+                        "idade": 51
+                }
+        ]
+}
